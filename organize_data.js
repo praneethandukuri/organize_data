@@ -117,5 +117,5 @@ const peopleAndNatives = (people) =>
 const listOfTotalHobbies = function (people) {
   const personsHobbies = people.flatMap((person) => person.hobbies);
 
-  return [personsHobbies.length, personsHobbies];
+  return { hobbiesCount: personsHobbies.length, hobbies: personsHobbies };
 };
