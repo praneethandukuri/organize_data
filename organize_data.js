@@ -102,3 +102,9 @@ const totalPersonsOwnedCar = (people) =>
 const totalVaccinatedPets = (people) =>
   people.flatMap((person) => person.pets).filter((pet) => pet.vaccinated)
     .length;
+
+//4. What are the names of all the pets, and what type of animal is each?
+const namesAndTypeOfPets = (people) =>
+  people
+    .flatMap((person) => person.pets)
+    .map((pet) => ({ petName: pet.name, petType: pet.type }));
