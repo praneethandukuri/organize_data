@@ -164,3 +164,9 @@ const totalPetsWithPersonNoCar = (people) =>
     .filter((person) => !person.ownsCar)
     .flatMap((person) => person.pets)
     .filter((pet) => pet.vaccinated).length;
+
+//14. What is the most common type of pet among the group?
+
+//15. How many individuals have more than two hobbies?
+const personWithMoreThan2Hobbies = (people) =>
+  people.filter((person) => person.hobbies.length > 2);
