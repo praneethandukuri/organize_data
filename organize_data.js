@@ -177,9 +177,19 @@ const commonHobbyWithRamesh = (people) => {
     (person) => person.name === "Ramesh"
   ).hobbies;
 
-  const sharedHobbyCount = people.filter((person) => {
-    return person.hobbies.some((hobby) => rameshHobbies.includes(hobby));
-  }).length;
+  const sharedHobbyCount = people.filter((person) =>
+    person.hobbies.some((hobby) => rameshHobbies.includes(hobby))
+  ).length;
 
   return sharedHobbyCount;
+};
+
+//17. Which pet is the youngest, and what is its name and age?
+const youngestPet = (people) => {
+  const allPets = people.flatMap((person) => person.pets);
+  const youngPet = allPets.reduce((youngestPet, currentPet) =>
+    currentPet.age < youngestPet.age ? currentPet : youngestPet
+  );
+
+  return { name: youngPet.name, age: youngPet.age };
 };
