@@ -97,3 +97,8 @@ const totalEmployedPersons = (people) =>
 //2. How many people own a car?
 const totalPersonsOwnedCar = (people) =>
   people.filter((person) => person.ownsCar).length;
+
+// 3. How many pets are fully vaccinated?
+const totalVaccinatedPets = (people) =>
+  people.flatMap((person) => person.pets).filter((pet) => pet.vaccinated)
+    .length;
