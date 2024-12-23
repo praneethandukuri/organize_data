@@ -119,3 +119,7 @@ const listOfTotalHobbies = function (people) {
 
   return { hobbiesCount: personsHobbies.length, hobbies: personsHobbies };
 };
+// 7. How many pets belong to people who are currently unemployed?
+const totalPetsWithUnemployed = (people) =>
+  people.filter((person) => !person.isEmployed).flatMap((person) => person.pets)
+    .length;
