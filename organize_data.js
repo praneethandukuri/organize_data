@@ -204,3 +204,11 @@ const cityStartsWithBsNative = (people) =>
       name: person.name,
       city: person.city,
     }));
+
+//20. Which individuals do not own any pets?
+const peopleWithNoPets = (people) =>
+  people
+    .filter((person) => person.pets.length === 0)
+    .map((person) => ({
+      name: person.name,
+    }));
