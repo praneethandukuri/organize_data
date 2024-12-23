@@ -130,3 +130,9 @@ const averageAge = (people) => {
 
   return ages.reduce((sum, current) => sum + current) / ages.length;
 };
+
+// 9. How many individuals have studied computer science, and how many of them have pets?
+const cs_students_with_pets = (people) =>
+  people
+    .filter((person) => person.studied.includes("Computer Science"))
+    .filter((person) => person.pets).length;
