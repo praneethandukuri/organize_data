@@ -44,7 +44,7 @@ const people = [
     age: 45,
     profession: "Business Owner",
     city: "Jaipur",
-    hobbies: ["Gardening", "Reading historical fiction"],
+    hobbies: ["Gardening", "Reading historical fiction books"],
     pets: [
       {
         name: "Bella",
@@ -108,7 +108,7 @@ const totalVaccinatedPets = (people) =>
 const namesAndTypeOfPets = (people) =>
   people
     .flatMap((person) => person.pets)
-    .map((pet) => ({ petName: pet.name, petType: pet.type }));
+    .map((pet) => ({ name: pet.name, type: pet.type }));
 
 // 5. Which cities do the individuals live in?
 const peopleAndNatives = (people) =>
@@ -193,3 +193,14 @@ const youngestPet = (people) => {
 
   return { name: youngPet.name, age: youngPet.age };
 };
+
+// 18. What types of books are mentioned as interests, and who reads them?
+
+// 19. How many individuals live in cities starting with the letter "B"?
+const cityStartsWithBsNative = (people) =>
+  people
+    .filter((person) => person.city.startsWith("B"))
+    .map((person) => ({
+      name: person.name,
+      city: person.city,
+    }));
