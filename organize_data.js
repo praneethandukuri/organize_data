@@ -123,3 +123,10 @@ const listOfTotalHobbies = function (people) {
 const totalPetsWithUnemployed = (people) =>
   people.filter((person) => !person.isEmployed).flatMap((person) => person.pets)
     .length;
+
+// 8. What is the average age of the individuals mentioned in the passage?
+const averageAge = (people) => {
+  const ages = people.map((person) => person.age);
+
+  return ages.reduce((sum, current) => sum + current) / ages.length;
+};
