@@ -89,3 +89,8 @@ const people = [
     studied: [],
   },
 ];
+
+//1. How many individuals are currently employed?
+const individualsEmployed = function (people) {
+  return people.filter((person) => person.isEmployed).length;
+};
