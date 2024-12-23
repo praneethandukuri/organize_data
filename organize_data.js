@@ -91,6 +91,9 @@ const people = [
 ];
 
 //1. How many individuals are currently employed?
-const totalEmployedPersons = function (people) {
-  return people.filter((person) => person.isEmployed).length;
-};
+const totalEmployedPersons = (people) =>
+  people.filter((person) => person.isEmployed).length;
+
+//2. How many people own a car?
+const totalPersonsOwnedCar = (people) =>
+  people.filter((person) => person.ownsCar).length;
