@@ -147,8 +147,20 @@ const peopleWithMoreThanOnePet = (people) =>
 const petsNotWithFavouriteActivities = (people) =>
   people
     .flatMap((person) => person.pets)
-    .filter((pet) => pet.favouriteActivity.length !== 0).length;
+    .filter((pet) => pet.favouriteActivity.length !== 0)
+    .map((pet) => ({
+      name: pet.name,
+      type: pet.type,
+      favouriteActivity: pet.favouriteActivity,
+    }));
 
 //12. What are the names of all animals that belong to people who live in Bangalore or Chennai?
 const pets_with_native_of_BLR_CHN = (people) =>
   people.filter((person) => ["Bangalore", "Chennai"].includes(person.city));
+
+// 13. How many vaccinated pets belong to people who do not own a car?
+const totalPetsWithPersonNoCar = (people) =>
+  people
+    .filter((person) => !person.ownsCar)
+    .flatMap((person) => person.pets)
+    .filter((pet) => pet.vaccinated).length;
