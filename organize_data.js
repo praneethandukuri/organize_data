@@ -12,7 +12,7 @@ const people = [
         breed: "golden retriever",
         age: 4,
         vaccinated: true,
-        favouriteActivity: "playing fetch in the park",
+        favouriteActivity: ["playing fetch in the park"],
       },
     ],
     isEmployed: true,
@@ -31,7 +31,7 @@ const people = [
         name: "Kiwi",
         type: "Parrot",
         vaccinated: true,
-        traits: ["knows over 20 phrases", "mimics ananya's voice"],
+        favouriteActivity: ["knows over 20 phrases", "mimics ananya's voice"],
       },
     ],
     isEmployed: false,
@@ -52,7 +52,7 @@ const people = [
         breed: "Persian",
         age: 3,
         vaccinated: true,
-        favouriteActivity: "Lounging in the sun",
+        favouriteActivity: ["Lounging in the sun"],
       },
       {
         name: "Leo",
@@ -60,7 +60,7 @@ const people = [
         breed: "Persian",
         age: 3,
         vaccinated: true,
-        favouriteActivity: "Lounging in the sun",
+        favouriteActivity: ["Lounging in the sun"],
       },
     ],
     isEmployed: true,
@@ -80,8 +80,9 @@ const people = [
         type: "Rabbit",
         age: 2,
         vaccinated: true,
-        favouriteActivity:
+        favouriteActivity: [
           "hopping around her backyard and nibbling on carrots",
+        ],
       },
     ],
     isEmployed: false,
@@ -119,6 +120,7 @@ const listOfTotalHobbies = function (people) {
 
   return { hobbiesCount: personsHobbies.length, hobbies: personsHobbies };
 };
+
 // 7. How many pets belong to people who are currently unemployed?
 const totalPetsWithUnemployed = (people) =>
   people.filter((person) => !person.isEmployed).flatMap((person) => person.pets)
@@ -140,3 +142,9 @@ const cs_students_with_pets = (people) =>
 // 10. How many individuals own more than one pet?
 const peopleWithMoreThanOnePet = (people) =>
   people.filter((person) => person.pets.length > 1).length;
+
+// 11. Which pets are associated with specific favorite activities?
+const petsNotWithFavouriteActivities = (people) =>
+  people
+    .flatMap((person) => person.pets)
+    .filter((pet) => pet.favouriteActivity.length !== 0).length;
