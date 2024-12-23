@@ -170,3 +170,16 @@ const totalPetsWithPersonNoCar = (people) =>
 //15. How many individuals have more than two hobbies?
 const personWithMoreThan2Hobbies = (people) =>
   people.filter((person) => person.hobbies.length > 2);
+
+// 16. How many individuals share at least one hobby with Ramesh?
+const commonHobbyWithRamesh = (people) => {
+  const rameshHobbies = people.find(
+    (person) => person.name === "Ramesh"
+  ).hobbies;
+
+  const sharedHobbyCount = people.filter((person) => {
+    return person.hobbies.some((hobby) => rameshHobbies.includes(hobby));
+  }).length;
+
+  return sharedHobbyCount;
+};
