@@ -136,3 +136,7 @@ const cs_students_with_pets = (people) =>
   people
     .filter((person) => person.studied.includes("Computer Science"))
     .filter((person) => person.pets).length;
+
+// 10. How many individuals own more than one pet?
+const peopleWithMoreThanOnePet = (people) =>
+  people.filter((person) => person.pets.length > 1).length;
