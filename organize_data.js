@@ -91,6 +91,6 @@ const people = [
 ];
 
 //1. How many individuals are currently employed?
-const individualsEmployed = function (people) {
+const totalEmployedPersons = function (people) {
   return people.filter((person) => person.isEmployed).length;
 };
