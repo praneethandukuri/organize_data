@@ -112,3 +112,10 @@ const namesAndTypeOfPets = (people) =>
 // 5. Which cities do the individuals live in?
 const peopleAndNatives = (people) =>
   people.map((person) => ({ name: person.name, city: person.city }));
+
+// 6. How many hobbies are shared across the group? What are they?
+const listOfTotalHobbies = function (people) {
+  const personsHobbies = people.flatMap((person) => person.hobbies);
+
+  return [personsHobbies.length, personsHobbies];
+};
