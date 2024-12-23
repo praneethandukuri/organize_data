@@ -108,3 +108,7 @@ const namesAndTypeOfPets = (people) =>
   people
     .flatMap((person) => person.pets)
     .map((pet) => ({ petName: pet.name, petType: pet.type }));
+
+// 5. Which cities do the individuals live in?
+const peopleAndNatives = (people) =>
+  people.map((person) => ({ name: person.name, city: person.city }));
